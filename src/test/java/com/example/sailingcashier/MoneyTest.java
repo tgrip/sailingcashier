@@ -16,7 +16,7 @@ class MoneyTest {
 
         BigDecimal five = BigDecimal.valueOf(5);
         Money other = new Money(five, eur);
-        Money result = money.add(other);
+        Money result = money.save(other);
 
         assertEquals(five, result.getValue());
         assertEquals(eur, result.getCurrency());
@@ -29,7 +29,7 @@ class MoneyTest {
         Money money = new Money(five, eur);
         Money other = new Money(new BigDecimal(".5"), eur);
 
-        Money result = money.substract(other);
+        Money result = money.spend(other);
 
         assertEquals(new BigDecimal("4.5"), result.getValue());
     }

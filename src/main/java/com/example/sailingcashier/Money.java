@@ -35,7 +35,7 @@ public class Money {
         return currency;
     }
 
-    public Money add(Money other) {
+    public Money save(Money other) {
         if (this.currency.equals(other.currency)) {
             return new Money(value.add(other.value), currency);
         } else {
@@ -43,7 +43,7 @@ public class Money {
         }
     }
 
-    public Money substract(Money other) {
+    public Money spend(Money other) {
         if (this.currency.equals(other.currency)) {
             if (value.doubleValue() >= other.value.doubleValue()) {
                 return new Money(value.subtract(other.value), currency);
@@ -53,6 +53,5 @@ public class Money {
         } else {
             throw new IllegalArgumentException("Only money of the same currency can be added");
         }
-
     }
 }
